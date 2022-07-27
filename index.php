@@ -9,22 +9,23 @@ class Movie {
     
     public $runtime;
 
+    public $oscar;
+
     public function __construct($_title, $_director) {
         $this->title = $_title;
         $this->director = $_director;
     }
     
-    public function released() {
-        return $this->director;
+    public function oscarNumbers() {
+        return 'Il film ha vinto'.' '. $this->oscar. ' ' . 'premi oscar';
     }
 }
 
 $alien = new Movie('Alien','Ridley Scott');
-
-$alien->runtime = 'min';
+$alien->runtime = '120 min';
 $alien->language = 'it';
-var_dump($alien->released());
-
+$alien->oscar = '1';
+var_dump($alien->oscarNumbers());
 
 ?>
 
@@ -37,6 +38,11 @@ var_dump($alien->released());
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>LISTA FILM</h1>
+    <h2><?php echo $alien->title; ?></h2>
+    <h3>Director: <?php echo $alien->title; ?> </h3>
+    <h4>Language:  <?php echo $alien->language; ?> </h4>
+    <h4>Runtime:  <?php echo $alien->runtime; ?> </h4>
+    <h5><?php echo $alien->oscarNumbers(); ?> </h5>
 </body>
 </html>
