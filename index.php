@@ -25,7 +25,12 @@ $alien = new Movie('Alien','Ridley Scott');
 $alien->runtime = '120 min';
 $alien->language = 'it';
 $alien->oscar = '1';
-var_dump($alien->oscarNumbers());
+// var_dump($alien->oscarNumbers());
+
+$parasite = new Movie('Parasite','Bong Joon-ho');
+$parasite->runtime = '132 min';
+$parasite->language = 'ko';
+$parasite->oscar = '4';
 
 ?>
 
@@ -40,9 +45,15 @@ var_dump($alien->oscarNumbers());
 <body>
     <h1>LISTA FILM</h1>
     <h2><?php echo $alien->title; ?></h2>
-    <h3>Director: <?php echo $alien->title; ?> </h3>
+    <h3>Director: <?php echo $alien->director; ?> </h3>
     <h4>Language:  <?php echo $alien->language; ?> </h4>
     <h4>Runtime:  <?php echo $alien->runtime; ?> </h4>
     <h5><?php echo $alien->oscarNumbers(); ?> </h5>
+
+    <h2><?php echo $parasite->title; ?></h2>
+    <h3>Director: <?php echo $parasite->director; ?> </h3>
+    <h4>Language:  <?php echo $parasite->language; ?> </h4>
+    <h4>Runtime:  <?php echo $parasite->runtime; ?> </h4>
+    <h5><?php echo $parasite->oscarNumbers(); ?> </h5>
 </body>
 </html>
